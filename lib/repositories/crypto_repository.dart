@@ -9,7 +9,7 @@ class CryptoRepository extends BaseCryptoRepository {
   static const int _perApiCall = 20;
   final http.Client _httpClient;
 
-  CryptoRepository(http.Client httpClient)
+  CryptoRepository({http.Client httpClient})
       : _httpClient = httpClient ?? http.Client();
   @override
   Future<List<Coin>> getTopCoins({int page}) async {

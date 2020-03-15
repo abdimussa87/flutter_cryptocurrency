@@ -12,13 +12,6 @@ class Coin extends Equatable {
     @required this.price,
   });
 
-  @override
-  List<Object> get props => [name, fullName, price];
-  @override
-  String toString() {
-    return "Coin { name: $name, fullName: $fullName, price: $price}";
-  }
-
   factory Coin.fromJson(Map<String, dynamic> json) {
     return Coin(
       name: json['CoinInfo']['Name'] as String,
@@ -26,4 +19,12 @@ class Coin extends Equatable {
       price: (json['RAW']['USD']['PRICE'] as num).toDouble(),
     );
   }
+  
+  @override
+  List<Object> get props => [name, fullName, price];
+  @override
+  String toString() {
+    return "Coin { name: $name, fullName: $fullName, price: $price}";
+  }
+
 }
